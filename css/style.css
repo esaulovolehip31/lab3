@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #97a7bc;
+}
+
+.container {
+  display: grid;
+  grid-template-rows:10vh auto 70vh 10vh;
+  grid-template-columns:15vw auto 25vw;
+  grid-template-areas:
+    "header header side"
+    "navigation mid_title side"
+    "navigation mid side"
+    "footer footer footer";
+  gap: 5px;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #97a7bc;
+}
+
+
+.header {
+  grid-area: header;
+  background: #8a8d9e;
+  font-size: 20px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 10px;
+  height:auto;
+  min-height: 50px;
+}
+
+.header p {
+  width: fit-content;
+  justify-self: end;
+}
+
+.box {
+  background: #ffffff;
+  display: grid;
+  min-width: 12vw;
+  width: 14vw;
+  height: auto;
+  border: 2px solid black;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  font-size: clamp(1px, 1.5vw, 15px);
+}
+
+.navigation {
+  grid-area: navigation;
+
+  background: #8a8d9e;
+  display: grid;
+  font-size: 30px;
+  align-items: center;
+  justify-items: center;
+  padding: 20px;
+}
+
+.navigation li {
+  list-style: none;
+  text-align: center;
+
+}
+
+.mid_title {
+  grid-area: mid_title;
+
+  background: #8a8d9e;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.mid {
+  grid-area: mid;
+
+  background: #8a8d9e;
+  font-size: 20px;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.mid p {
+  margin: 10px;
+}
+
+.mid img {
+  max-width: 60%;
+  height: 60%;
+  margin: 10px;
+}
+
+.side {
+  grid-area: side;
+
+  background: #8a8d9e;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.side img {
+  max-width: 95%;
+  height: auto;
+  margin: 4px;
+}
+
+.footer {
+  grid-area: footer;
+  background: #8a8d9e;
+  display: grid;
+  grid-template-columns: 200px auto;
+  align-items: center;
+  font-size: 20px;
+  padding: 10px;
+  min-height: 50px;
+}
+
+.footer div {
+  justify-self: end;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header"
+      "navigation"
+      "mid_title"
+      "mid"
+      "side"
+      "footer";
+    grid-template-rows: 70px auto auto auto auto 70px;
+    grid-template-columns: auto;
+    height: auto;
+  }
+
+  .mid,
+  .side {
+    overflow:visible ;
+  }
+
+}
+
+a:link{
+  text-decoration: none;
+  color: #000000;
+}
+
+a:visited {
+  color:#000000;
+}
+
+a:hover{
+  color: #4b67ff;
+}
